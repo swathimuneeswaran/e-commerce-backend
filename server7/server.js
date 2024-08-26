@@ -20,7 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 // view engine setup
 app.use(express.static("./views"));
 app.set("view engine", "ejs");
-
+app.get("/", (req, res) => {
+  res.send("hello")
+  })
 app.use("/", route);
 app.use("*", function(req,res){
     res.status(404);
